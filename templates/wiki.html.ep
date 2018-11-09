@@ -33,7 +33,7 @@
   my $ssh_rep_url_base = defined app->config->{basic}{'ssh_rep_url_base'}
     ? app->config->{basic}{'ssh_rep_url_base'} : $rep_home;
   my $ssh_rep_url = "ssh://$execute_user\@" . $url->host
-    . ($ssh_port ? ":$ssh_port" : '') . "$ssh_rep_url_base/$user_id/$project_id.wiki.git";
+     . "$ssh_rep_url_base/$user_id/$project_id.wiki.git";
   
   # Display type
   my $display;
