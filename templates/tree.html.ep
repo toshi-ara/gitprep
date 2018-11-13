@@ -71,7 +71,7 @@
   my $ssh_rep_url_base = defined app->config->{basic}{'ssh_rep_url_base'}
     ? app->config->{basic}{'ssh_rep_url_base'} : $rep_home;
   my $ssh_rep_url = "ssh://$execute_user\@" . $url->host
-    .  "$ssh_rep_url_base/$user_id/$project_id.git";
+    . ($ssh_port ? ":$ssh_port" : '') . "$ssh_rep_url_base/$user_id/$project_id.git";
 
   my $branches = stash('branches');
   my $branches_count = app->git->branches_count($self->app->rep_info($user_id, $project_id));
